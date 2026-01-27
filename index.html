@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATELIER - Haute Couture</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: Add smooth scrolling behavior -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="relative">
+                        <i data-lucide="scissors" class="h-10 w-10 text-rose-600"></i>
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-pink-500 rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="ml-3">
+                        <h1
+                            class="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+                            ATELIER</h1>
+                        <p class="text-xs text-slate-500 font-medium">Haute Couture</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home"
+                        class="text-slate-700 hover:text-rose-600 transition-all duration-300 font-medium relative group">
+                        Collection
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#models"
+                        class="text-slate-700 hover:text-rose-600 transition-all duration-300 font-medium relative group">
+                        Models
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#design"
+                        class="text-slate-700 hover:text-rose-600 transition-all duration-300 font-medium relative group">
+                        Design
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#atelier"
+                        class="text-slate-700 hover:text-rose-600 transition-all duration-300 font-medium relative group">
+                        Atelier
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden min-h-screen flex items-center">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-rose-50/30 to-pink-50/50"></div>
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Scissors: Top Left -->
+            <div class="absolute top-[15%] left-[5%] lg:left-[10%] text-rose-900/5 transform -rotate-12 blur-[1px]">
+                <i data-lucide="scissors" class="w-32 h-32 lg:w-48 lg:h-48"></i>
+            </div>
+
+            <!-- Ruler/Tape: Bottom Right -->
+            <div class="absolute bottom-[10%] right-[5%] lg:right-[8%] text-slate-800/5 transform rotate-45">
+                <i data-lucide="ruler" class="w-40 h-40 lg:w-56 lg:h-56"></i>
+            </div>
+
+            <!-- Sketching Pen: Top Right -->
+            <div class="absolute top-[10%] right-[8%] lg:right-[15%] text-rose-500/10 transform rotate-12 blur-sm">
+                <i data-lucide="pen-tool" class="w-24 h-24 lg:w-32 lg:h-32"></i>
+            </div>
+
+            <!-- Button/Bobbin: Bottom Left -->
+            <div class="absolute bottom-[20%] left-[8%] text-slate-600/5 animate-pulse duration-[4000ms]">
+                <i data-lucide="circle-dashed" class="w-20 h-20 lg:w-28 lg:h-28"></i>
+            </div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="text-center space-y-8">
+                <div class="space-y-6">
+                    <div
+                        class="inline-flex items-center px-5 py-2 bg-rose-100 text-rose-800 rounded-full text-sm font-medium tracking-wide">
+                        <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>
+                        Haute Couture Collection 2025
+                    </div>
+
+                    <h2 class="text-6xl lg:text-8xl font-bold leading-tight">
+                        <span
+                            class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 bg-clip-text text-transparent">
+                            Modern
+                        </span>
+                        <span
+                            class="bg-gradient-to-r from-rose-600 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+                            Elegance
+                        </span>
+                    </h2>
+
+                    <p class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light">
+                        Three distinct visions of contemporary fashion, where innovative design meets timeless
+                        sophistication.
+                        Each piece tells a story of craftsmanship, creativity, and the future of haute couture.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                    <button
+                        class="group bg-gradient-to-r from-rose-600 to-pink-500 text-white px-8 py-3.5 rounded-2xl hover:from-rose-700 hover:to-pink-600 transition-all duration-300 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center text-base">
+                        Explore Collection
+                        <i data-lucide="arrow-right"
+                            class="ml-2.5 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </button>
+
+                    <!-- Refined Secondary Button: Matches primary dimensions, lighter border feel -->
+                    <button
+                        class="group border border-slate-300 text-slate-700 px-8 py-3.5 rounded-2xl hover:border-rose-500 hover:text-rose-600 transition-all duration-300 font-medium flex items-center justify-center text-base">
+                        <i data-lucide="eye" class="mr-2.5 w-5 h-5"></i>
+                        Behind the Scenes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section id="models" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div
+                    class="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium mb-6">
+                    <i data-lucide="palette" class="w-4 h-4 mr-2"></i>
+                    Featured Models
+                </div>
+                <h3 class="text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+                    Three <span class="text-rose-600">Visions</span>
+                </h3>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Each model embodies a unique aesthetic philosophy, showcasing the versatility and innovation of
+                    contemporary fashion design.
+                </p>
+            </div>
+
+            <!-- Model 1: Architectural Minimalism -->
+            <div class="mb-32">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-slate-100 to-stone-100 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500">
+                        </div>
+                        <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+                            <img src="./images/card-1.png"
+                                alt="Model wearing architectural minimalist design with clean lines and structured silhouette"
+                                class="w-full h-[700px] object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="text-xl font-bold text-slate-900">ARIA</h4>
+                                            <p class="text-slate-600">Architectural Minimalism</p>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <div class="w-4 h-4 bg-slate-300 rounded-full"></div>
+                                            <div class="w-4 h-4 bg-stone-400 rounded-full"></div>
+                                            <div class="w-4 h-4 bg-zinc-500 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-4xl font-bold text-slate-900 mb-6">Architectural Minimalism</h4>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                                Clean geometric lines meet sculptural silhouettes in this striking ensemble. The
+                                structured blazer features
+                                sharp angular cuts that create dramatic shadows, while the wide-leg trousers flow with
+                                architectural precision.
+                                Monochromatic tones in dove grey and charcoal emphasize the garment's construction over
+                                ornamentation.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-slate-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Silhouette</h5>
+                                <p class="text-sm text-slate-600">Oversized structured blazer with exaggerated
+                                    shoulders, paired with high-waisted wide-leg trousers that create a powerful,
+                                    commanding presence.</p>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Fabrics</h5>
+                                <p class="text-sm text-slate-600">Premium wool gabardine with subtle texture, reinforced
+                                    with structured interfacing for architectural hold and movement.</p>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Details</h5>
+                                <p class="text-sm text-slate-600">Invisible seaming, geometric pocket placement, and
+                                    minimalist hardware that disappears into the design's clean lines.</p>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Styling</h5>
+                                <p class="text-sm text-slate-600">Sleek pointed-toe boots, geometric jewelry, and a
+                                    structured handbag that echoes the outfit's architectural theme.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model 2: Romantic Avant-Garde -->
+            <div class="mb-32">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8 lg:order-2">
+                        <div>
+                            <h4 class="text-4xl font-bold text-slate-900 mb-6">Romantic Avant-Garde</h4>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                                Ethereal layers and unexpected textures create a dreamlike vision of modern femininity.
+                                The asymmetrical
+                                dress features hand-pleated silk organza that catches light like morning mist, while
+                                metallic threading
+                                adds subtle glamour. Soft blush and pearl tones evoke romance with a contemporary edge.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-rose-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Silhouette</h5>
+                                <p class="text-sm text-slate-600">Asymmetrical midi dress with cascading layers, fitted
+                                    bodice, and flowing skirt that moves like liquid poetry with each step.</p>
+                            </div>
+                            <div class="bg-rose-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Fabrics</h5>
+                                <p class="text-sm text-slate-600">Silk organza, metallic tulle, and hand-embroidered
+                                    mesh create depth and movement with varying levels of transparency.</p>
+                            </div>
+                            <div class="bg-rose-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Details</h5>
+                                <p class="text-sm text-slate-600">Hand-sewn pearl beading, delicate feather trim, and
+                                    invisible boning that creates structure within the flowing design.</p>
+                            </div>
+                            <div class="bg-rose-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Styling</h5>
+                                <p class="text-sm text-slate-600">Strappy heeled sandals, delicate chain jewelry, and a
+                                    small beaded clutch that complements the dress's ethereal quality.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group lg:order-1">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-500">
+                        </div>
+                        <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+                            <img src="./images/card-2.png"
+                                alt="Model in romantic avant-garde dress with flowing layers and ethereal textures"
+                                class="w-full h-[700px] object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="text-xl font-bold text-slate-900">LUNA</h4>
+                                            <p class="text-slate-600">Romantic Avant-Garde</p>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <div class="w-4 h-4 bg-rose-300 rounded-full"></div>
+                                            <div class="w-4 h-4 bg-pink-400 rounded-full"></div>
+                                            <div class="w-4 h-4 bg-purple-300 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model 3: Urban Futurism -->
+            <div class="mb-16">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500">
+                        </div>
+                        <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+                            <img src="./images/card-3.png"
+                                alt="Model showcasing urban futurism with metallic fabrics and bold geometric patterns"
+                                class="w-full h-[700px] object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="text-xl font-bold text-slate-900">NOVA</h4>
+                                            <p class="text-slate-600">Urban Futurism</p>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <div class="w-4 h-4 bg-indigo-400 rounded-full"></div>
+                                            <div class="w-4 h-4 bg-purple-500 rounded-full"></div>
+                                            <div class="w-4 h-4 bg-cyan-400 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-4xl font-bold text-slate-900 mb-6">Urban Futurism</h4>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                                Bold geometric patterns and innovative materials create a vision of tomorrow's fashion
+                                today. The
+                                statement jacket features laser-cut panels and holographic accents, while the fitted
+                                pants showcase
+                                technical fabrics that adapt to movement. Electric blues and metallic silvers reflect
+                                the energy of urban life.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-indigo-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Silhouette</h5>
+                                <p class="text-sm text-slate-600">Cropped bomber jacket with exaggerated proportions,
+                                    paired with high-waisted fitted pants that create a bold, futuristic profile.</p>
+                            </div>
+                            <div class="bg-indigo-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Fabrics</h5>
+                                <p class="text-sm text-slate-600">Technical neoprene, holographic vinyl, and
+                                    moisture-wicking performance fabrics that blend function with high fashion.</p>
+                            </div>
+                            <div class="bg-indigo-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Details</h5>
+                                <p class="text-sm text-slate-600">Laser-cut geometric patterns, LED-integrated trim, and
+                                    magnetic closures that eliminate traditional hardware.</p>
+                            </div>
+                            <div class="bg-indigo-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-slate-900 mb-3">Styling</h5>
+                                <p class="text-sm text-slate-600">Platform sneakers with metallic accents, geometric
+                                    sunglasses, and a structured backpack that doubles as a tech accessory.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Philosophy Section -->
+    <section id="design" class="py-32 bg-gradient-to-br from-slate-50 to-rose-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div
+                    class="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm text-slate-700 rounded-full text-sm font-medium mb-6 shadow-sm">
+                    <i data-lucide="zap" class="w-4 h-4 mr-2"></i>
+                    Design Philosophy
+                </div>
+                <h3 class="text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+                    Innovation Meets <span class="text-rose-600">Artistry</span>
+                </h3>
+                <p class="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                    Our approach to fashion design transcends traditional boundaries, creating pieces that are both
+                    wearable art and functional garments for the modern world.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div
+                    class="group bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="scissors" class="h-10 w-10 text-rose-600"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-6">Precision Craftsmanship</h4>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Every stitch, seam, and detail is executed with meticulous attention to perfection. Our artisans
+                        combine traditional techniques with modern innovation to create garments that stand the test of
+                        time.
+                    </p>
+                    <div
+                        class="flex items-center text-rose-600 font-medium group-hover:text-rose-700 transition-colors duration-300 cursor-pointer">
+                        Explore Process <i data-lucide="arrow-right"
+                            class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="palette" class="h-10 w-10 text-purple-600"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-6">Color Harmony</h4>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Our color palettes are carefully curated to evoke emotion and enhance the wearer's natural
+                        beauty. Each combination is tested for versatility and timeless appeal across different skin
+                        tones and occasions.
+                    </p>
+                    <div
+                        class="flex items-center text-rose-600 font-medium group-hover:text-rose-700 transition-colors duration-300 cursor-pointer">
+                        View Palettes <i data-lucide="arrow-right"
+                            class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="sparkles" class="h-10 w-10 text-amber-600"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-6">Sustainable Innovation</h4>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        We pioneer eco-conscious fashion through innovative materials and responsible production
+                        methods. Our commitment to sustainability never compromises on luxury or quality.
+                    </p>
+                    <div
+                        class="flex items-center text-rose-600 font-medium group-hover:text-rose-700 transition-colors duration-300 cursor-pointer">
+                        Learn More <i data-lucide="arrow-right"
+                            class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atelier Section -->
+    <section id="atelier" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-10">
+                    <div>
+                        <div
+                            class="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium mb-6">
+                            <i data-lucide="award" class="w-4 h-4 mr-2"></i>
+                            Behind the Scenes
+                        </div>
+                        <h3 class="text-5xl lg:text-6xl font-bold text-slate-900 mb-8">
+                            The <span class="text-rose-600">Atelier</span>
+                        </h3>
+                        <p class="text-xl text-slate-600 leading-relaxed mb-10">
+                            Step into our creative sanctuary where imagination becomes reality. Our atelier is where
+                            master craftspeople,
+                            innovative designers, and cutting-edge technology converge to create the future of fashion.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="text-center p-8 bg-gradient-to-br from-slate-50 to-rose-50 rounded-2xl">
+                            <div
+                                class="text-4xl font-bold bg-gradient-to-r from-rose-600 to-pink-500 bg-clip-text text-transparent mb-3">
+                                50+</div>
+                            <div class="text-slate-600 font-medium">Master Artisans</div>
+                        </div>
+                        <div class="text-center p-8 bg-gradient-to-br from-slate-50 to-rose-50 rounded-2xl">
+                            <div
+                                class="text-4xl font-bold bg-gradient-to-r from-rose-600 to-pink-500 bg-clip-text text-transparent mb-3">
+                                200+</div>
+                            <div class="text-slate-600 font-medium">Hours per Piece</div>
+                        </div>
+                        <div class="text-center p-8 bg-gradient-to-br from-slate-50 to-rose-50 rounded-2xl">
+                            <div
+                                class="text-4xl font-bold bg-gradient-to-r from-rose-600 to-pink-500 bg-clip-text text-transparent mb-3">
+                                15</div>
+                            <div class="text-slate-600 font-medium">Years Experience</div>
+                        </div>
+                        <div class="text-center p-8 bg-gradient-to-br from-slate-50 to-rose-50 rounded-2xl">
+                            <div
+                                class="text-4xl font-bold bg-gradient-to-r from-rose-600 to-pink-500 bg-clip-text text-transparent mb-3">
+                                100%</div>
+                            <div class="text-slate-600 font-medium">Handcrafted</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative z-10">
+                        <img src="./images/card-1.png"
+                            alt="Fashion atelier workspace with designers creating haute couture pieces"
+                            class="w-full h-[600px] object-cover rounded-3xl shadow-2xl" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+                    </div>
+
+                    <!-- Floating elements -->
+                    <div
+                        class="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full opacity-20 animate-pulse">
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-full opacity-15 animate-pulse delay-1000">
+                    </div>
+
+                    <!-- Quality badge -->
+                    <div class="absolute top-8 right-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-rose-100 to-pink-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="heart" class="w-6 h-6 text-rose-600"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-slate-900">Handcrafted</div>
+                                <div class="text-xs text-slate-600">With Love</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-8">
+                        <i data-lucide="scissors" class="h-10 w-10 text-rose-600 mr-4"></i>
+                        <div>
+                            <h5 class="text-3xl font-bold">ATELIER</h5>
+                            <p class="text-sm text-slate-400">Haute Couture</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed max-w-md mb-8">
+                        Where fashion meets art, and every piece tells a story of innovation, craftsmanship, and
+                        timeless elegance.
+                        Creating the future of haute couture, one stitch at a time.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div
+                            class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-rose-600 transition-colors duration-300 cursor-pointer">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <div
+                            class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-rose-600 transition-colors duration-300 cursor-pointer">
+                            <i data-lucide="eye" class="w-6 h-6"></i>
+                        </div>
+                        <div
+                            class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-rose-600 transition-colors duration-300 cursor-pointer">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-bold mb-8">Collection</h5>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="hover:text-rose-600 transition-colors duration-300 cursor-pointer">Architectural
+                            Minimalism</li>
+                        <li class="hover:text-rose-600 transition-colors duration-300 cursor-pointer">Romantic
+                            Avant-Garde</li>
+                        <li class="hover:text-rose-600 transition-colors duration-300 cursor-pointer">Urban Futurism
+                        </li>
+                        <li class="hover:text-rose-600 transition-colors duration-300 cursor-pointer">Custom Couture
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-bold mb-8">Atelier</h5>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="hover:text-rose-600 transition-colors duration-300 cursor-pointer">Our Story</li>
+                        <li class="hover:text-rose-600 transition-colors duration-300 cursor-pointer">Craftsmanship</li>
+                        <li class="hover:text-rose-600 transition-colors duration-300 cursor-pointer">Sustainability
+                        </li>
+                        <li class="hover:text-rose-600 transition-colors duration-300 cursor-pointer">Appointments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm">© 2024 ATELIER. All rights reserved.</p>
+                <div class="flex space-x-8 mt-6 md:mt-0">
+                    <a href="#"
+                        class="text-slate-400 hover:text-rose-600 transition-colors duration-300 text-sm">Privacy
+                        Policy</a>
+                    <a href="#" class="text-slate-400 hover:text-rose-600 transition-colors duration-300 text-sm">Terms
+                        of Service</a>
+                    <a href="#"
+                        class="text-slate-400 hover:text-rose-600 transition-colors duration-300 text-sm">Press</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
