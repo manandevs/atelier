@@ -1,6 +1,0 @@
-{
-  "name": "ATELIER — Haute Couture",
-  "description": "ATELIER — a haute couture house. Three visions of contemporary fashion, made entirely by hand.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
