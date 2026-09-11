@@ -13,12 +13,12 @@ export default function Header({ onOpenEnquiry }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItemClass = "relative text-[0.68rem] tracking-[0.25em] uppercase text-stone-500 hover:text-stone-900 transition-colors py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-amber-700 hover:after:w-full after:transition-all after:duration-300";
+  const navItemClass = "relative text-md text-stone-700 hover:text-stone-900 transition-colors py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-amber-700 hover:after:w-full after:transition-all after:duration-300";
 
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-500 bg-stone-50/90 backdrop-blur-md border-b border-stone-900/10 flex items-center shell ${
+        className={`sticky top-0 z-50 transition-all duration-500 bg-amber-100 border-y border-amber-200/75 flex items-center px-4 lg:px-6 ${
           scrolled ? 'h-[74px]' : 'h-[96px]'
         }`}
       >
@@ -47,10 +47,10 @@ export default function Header({ onOpenEnquiry }) {
 
           {/* Center Wordmark */}
           <div className="text-center flex flex-col items-center">
-            <a href="#" className="font-serif text-2xl md:text-3xl tracking-[0.28em] font-light text-stone-900">
-              ATELIER
+            <a href="#" className="text-2xl md:text-3xl font-black text-stone-900">
+              Atelier
             </a>
-            <span className="text-[0.52rem] tracking-[0.4em] uppercase text-stone-500 -mt-1">
+            <span className="uppercase text-stone-800 text-xs tracking-widest">
               Haute Couture
             </span>
           </div>
@@ -62,7 +62,7 @@ export default function Header({ onOpenEnquiry }) {
               <a href="#commission" className={navItemClass}>Contact</a>
             </nav>
             <div className="hidden sm:block">
-              <Button href="#commission" variant="primary" className="px-5 py-[0.6rem]">
+              <Button href="#commission" className="">
                 Enquire
               </Button>
             </div>
@@ -79,28 +79,28 @@ export default function Header({ onOpenEnquiry }) {
           <a
             href="#collection"
             onClick={() => setMobileMenuOpen(false)}
-            className="font-serif text-2xl text-stone-900 hover:text-amber-700 transition-colors"
+            className=" text-2xl text-stone-900 hover:text-amber-700 transition-colors"
           >
             Collection
           </a>
           <a
             href="#philosophy"
             onClick={() => setMobileMenuOpen(false)}
-            className="font-serif text-2xl text-stone-900 hover:text-amber-700 transition-colors"
+            className=" text-2xl text-stone-900 hover:text-amber-700 transition-colors"
           >
             Philosophy
           </a>
           <a
             href="#atelier"
             onClick={() => setMobileMenuOpen(false)}
-            className="font-serif text-2xl text-stone-900 hover:text-amber-700 transition-colors"
+            className=" text-2xl text-stone-900 hover:text-amber-700 transition-colors"
           >
             Maison
           </a>
           <a
             href="#commission"
             onClick={() => setMobileMenuOpen(false)}
-            className="font-serif text-2xl text-stone-900 hover:text-amber-700 transition-colors"
+            className=" text-2xl text-stone-900 hover:text-amber-700 transition-colors"
           >
             Commission
           </a>

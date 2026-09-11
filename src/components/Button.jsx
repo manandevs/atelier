@@ -3,22 +3,23 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-between whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-between whitespace-nowrap rounded-sm font-bold text-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default:
-          "bg-stone-900 text-stone-50 border border-stone-900 hover:bg-stone-800",
+        default: "bg-amber-300 border border-amber-400",
         secondary:
-          "border border-amber-700/40 text-amber-700 hover:border-amber-700 hover:bg-amber-700/5",
+          "text-amber-50 bg-amber-700 hover:bg-amber-700/75",
         destructive:
           "bg-gradient-to-br from-red-600 to-red-800 text-stone-50 hover:opacity-90 border border-red-700",
-        dark: "border border-stone-50/30 text-stone-50 hover:text-stone-950 hover:bg-stone-50",
-        outline: "border border-stone-300 bg-transparent text-stone-900 hover:bg-stone-100",
+        dark:
+          "border border-white/40 text-white hover:border-white hover:bg-white/5",
+        outline:
+          "border border-amber-700/40 text-amber-700 hover:border-amber-700 hover:bg-amber-700/5",
         link: "text-stone-900 underline-offset-4 hover:underline bg-transparent justify-start p-0 h-auto",
       },
       size: {
-        default: "h-auto px-8 py-4 text-[0.64rem] tracking-[0.3em] uppercase",
+        default: "h-auto px-8 py-3",
         sm: "h-9 rounded-md px-3 text-xs",
         xs: "h-6 rounded-md px-2 text-xs",
         lg: "h-11 rounded-md px-8 text-sm",

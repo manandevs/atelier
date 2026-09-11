@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', '"Times New Roman"', 'serif'],
-        sans: ['"Jost"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        serif: ['ClashDisplay_Regular'],
+        sans: ['ClashDisplay_Regular'],
       },
       transitionTimingFunction: {
         DEFAULT: 'cubic-bezier(.22,.61,.36,1)',

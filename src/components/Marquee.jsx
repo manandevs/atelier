@@ -15,7 +15,7 @@ export default function Marquee() {
         {[...Array(2)].map((_, i) => (
           <div key={i} className="flex items-center gap-12 px-6 shrink-0">
             {phrases.map((phrase, idx) => (
-              <div key={idx} className="flex items-center gap-12 font-serif italic text-lg sm:text-xl text-stone-500 tracking-wide">
+              <div key={idx} className="flex items-center gap-12  italic text-lg sm:text-xl text-stone-500 tracking-wide">
                 <span>{phrase}</span>
                 <span className="w-[5px] h-[5px] bg-amber-700 rotate-45 inline-block shrink-0" />
               </div>

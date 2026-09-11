@@ -25,7 +25,7 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 text-stone-500 hover:text-stone-900 transition-colors font-sans text-sm tracking-widest uppercase"
+          className="absolute top-6 right-6 text-stone-500 hover:text-stone-900 transition-colors  text-sm tracking-widest uppercase"
         >
           [ Close ]
         </button>
@@ -34,7 +34,7 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
           <div className="text-center py-12 flex flex-col items-center gap-6">
             <span className="w-3 h-3 bg-amber-700 rotate-45" />
             <h3 className="display text-3xl text-stone-900">Commission Request Received</h3>
-            <p className="text-stone-500 text-sm font-sans max-w-md">
+            <p className="text-stone-500 text-sm  max-w-md">
               Thank you, {formData.name}. Our concierge will contact you at {formData.email} within 24 hours to schedule your private consultation at Place Vendôme.
             </p>
             <Button
@@ -59,7 +59,7 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
+                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 ">
                   Full Name
                 </label>
                 <input
@@ -68,12 +68,12 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Comtesse de Grasse"
-                  className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans"
+                  className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none "
                 />
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
+                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 ">
                   Email Address
                 </label>
                 <input
@@ -82,20 +82,20 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="patron@domain.com"
-                  className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans"
+                  className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none "
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
+                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 ">
                   Preferred Salon City
                 </label>
                 <select
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="border border-stone-900/10 bg-stone-50 p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans"
+                  className="border border-stone-900/10 bg-stone-50 p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none "
                 >
                   <option value="Paris">Paris (Place Vendôme)</option>
                   <option value="London">London (Mayfair)</option>
@@ -104,13 +104,13 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
+                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 ">
                   Subject / Look
                 </label>
                 <select
                   value={formData.look}
                   onChange={(e) => setFormData({ ...formData, look: e.target.value })}
-                  className="border border-stone-900/10 bg-stone-50 p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans"
+                  className="border border-stone-900/10 bg-stone-50 p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none "
                 >
                   <option value="Aria — Monolith Coat">Look 01 — Aria (Monolith Coat)</option>
                   <option value="Luna — Ethereal Silk Gown">Look 02 — Luna (Ethereal Silk Gown)</option>
@@ -121,7 +121,7 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
+              <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 ">
                 Notes & Occasion (Optional)
               </label>
               <textarea
@@ -129,7 +129,7 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="Share details regarding posture, special dates, or specific styling preferences..."
-                className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans resize-none"
+                className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none  resize-none"
               />
             </div>
 

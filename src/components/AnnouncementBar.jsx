@@ -1,8 +1,8 @@
 export default function AnnouncementBar() {
   return (
-    <div className="bg-stone-950 text-stone-50 text-center py-[0.78rem] px-4 text-[0.58rem] tracking-[0.34em] uppercase font-sans font-light">
+    <div className="bg-zinc-950 text-zinc-200 text-center py-2 px-4 font-bold">
       AUTUMN / WINTER 2026 PRIVATE SALONS NOW OPEN —{' '}
-      <a href="#commission" className="text-amber-300 underline underline-offset-4 hover:text-stone-50 transition-colors">
+      <a href="#commission" className="text-amber-600 underline underline-offset-4 hover:opacity-75 transition-colors">
         RESERVE AN APPOINTMENT
       </a>
     </div>

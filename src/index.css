@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Paper grain overlay */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: .03;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+body {
+    font-family: 'ClashDisplay_Regular';
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
         animation-duration: 0.01ms !important;
@@ -22,4 +13,9 @@ body::before {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+@font-face {
+    font-family: 'ClashDisplay_Regular';
+    src: url(../public/fonts/clash-display-regular.otf);
 }
