@@ -93,3 +93,63 @@
   </a>
 
 </div>
+
+## 📮 Contact Form & Environment
+
+The concierge form posts to **`/api/contact`**, a small server-side handler that
+writes the enquiry into the Airtable base. The Airtable personal access token is
+never sent to the browser.
+
+### Why there is a server-side handler
+
+A PAT can write to the base. Anything exposed to Vite under a `VITE_` prefix is
+inlined into the client bundle and readable by every visitor, so the token is
+deliberately kept **unprefixed** and read only in Node:
+
+| File | Runs | Sees the token |
+| :--- | :--- | :--- |
+| `api/_enquiry.js` | server | ✅ validation + Airtable write |
+| `api/contact.js` | server | ✅ HTTP entry point |
+| `src/lib/enquiries.js` | browser | ❌ just `fetch("/api/contact")` |
+
+### Local setup
+
+Copy `.env.example` to `.env.local` and fill in:
+
+```bash
+AIRTABLE_PAT=pat...          # scope: data.records:write
+AIRTABLE_BASE_ID=appHxVIvsomlNKVNS
+AIRTABLE_TABLE_NAME=Enquiries
+```
+
+`npm run dev` mounts the real handler on the dev server (see the plugin in
+`vite.config.js`), so local submissions write to Airtable exactly as production
+does.
+
+### Deploying
+
+`npm run build` emits a static `dist/`, but the form needs the `/api/contact`
+function to run — deploy on a host that executes the `api/` directory (Vercel,
+Netlify, or equivalent) and set the three variables above **as environment
+variables in the host's dashboard**, not in a committed file. On a purely static
+host the form will return a 405 and no enquiry is delivered.
+
+### The Airtable table
+
+`Enquiries` in the *Atelier Haute Couture* base:
+
+| Field | Type |
+| :--- | :--- |
+| Name | Single line text |
+| Email | Email |
+| Phone | Phone |
+| Salon City | Single select — Paris / London / New York |
+| Subject | Single select — matches the form's five options |
+| Message | Long text |
+| Consent | Checkbox |
+| Submitted At | Date & time (UTC, ISO) |
+| Status | Single select — New / Replied / Closed |
+
+The select options are mirrored in `api/_enquiry.js`; values outside those lists
+are rejected rather than submitted with `typecast`, which would silently create
+stray options. Change the options in Airtable and that list together.

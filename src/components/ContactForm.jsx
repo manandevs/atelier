@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 import Button from "./Button";
 import { cn } from "@/lib/utils";
+import { submitEnquiry, EnquiryValidationError } from "@/lib/enquiries";
 
 const SALON_CITIES = [
   { value: "Paris", label: "Paris (Place Vendôme)" },
@@ -69,22 +70,6 @@ function validate(values) {
   }
 
   return errors;
-}
-
-/**
- * Stubbed submit handler.
- *
- * Replace the timeout with the real transport (a fetch to the concierge
- * endpoint, a form service, etc.). It resolves with the payload so the success
- * state can address the patron by name, and rejects on failure so the form
- * surfaces its error state.
- */
-async function submitEnquiry(values) {
-  await new Promise((resolve) => setTimeout(resolve, 1200));
-  if (import.meta.env.DEV) {
-    console.info("[ATELIER] Contact enquiry (stub):", values);
-  }
-  return { ok: true, ...values };
 }
 
 function FieldShell({ id, label, error, hint, className, children }) {
@@ -165,7 +150,19 @@ export default function ContactForm() {
       setValues(EMPTY_FORM);
       setErrors({});
       setTouched({});
-    } catch {
+    } catch (error) {
+      // The server re-validates; if it disagrees with the client, surface its
+      // messages against the fields rather than a generic failure.
+      if (error instanceof EnquiryValidationError) {
+        setErrors(error.errors);
+        setTouched(
+          FIELD_ORDER.reduce((acc, name) => ({ ...acc, [name]: true }), {}),
+        );
+        setStatus("idle");
+        const firstInvalid = FIELD_ORDER.find((name) => error.errors[name]);
+        fieldRefs.current[firstInvalid]?.focus();
+        return;
+      }
       setStatus("error");
     }
   };
