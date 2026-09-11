@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import { ClerkProvider } from "@clerk/react";
-import { hasClerk, publishableKey, clerkAppearance } from "./lib/clerk";
+import { publishableKey, clerkAppearance } from "./lib/clerk";
 
 const tree = (
   <BrowserRouter>
@@ -14,16 +14,12 @@ const tree = (
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {hasClerk ? (
-      <ClerkProvider
-        publishableKey={publishableKey}
-        afterSignOutUrl="/"
-        appearance={clerkAppearance}
-      >
-        {tree}
-      </ClerkProvider>
-    ) : (
-      tree
-    )}
+    <ClerkProvider
+      publishableKey={publishableKey}
+      afterSignOutUrl="/"
+      appearance={clerkAppearance}
+    >
+      {tree}
+    </ClerkProvider>
   </React.StrictMode>,
 );

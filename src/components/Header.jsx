@@ -1,8 +1,21 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/react";
+import {
+  Show as ClerkShow,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/react";
 import Button from "./Button";
 import { hasClerk, clerkAppearance } from "../lib/clerk";
+
+/**
+ * Clerk's components throw outside <ClerkProvider />, which main.jsx only
+ * mounts when a publishable key is configured. Every Clerk control below sits
+ * inside a <Show>, so standing in for it when the key is absent keeps the
+ * header rendering instead of taking the whole page down with it.
+ */
+const Show = hasClerk ? ClerkShow : () => null;
 
 export default function Header({ onOpenEnquiry }) {
   const [scrolled, setScrolled] = useState(false);
