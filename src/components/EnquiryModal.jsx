@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 
 export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
   const [formData, setFormData] = useState({
@@ -19,45 +20,46 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in-up">
-      <div className="relative bg-ivory border border-line w-full max-w-xl p-8 md:p-12 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/60 backdrop-blur-sm animate-fade-in-up">
+      <div className="relative bg-stone-50 border border-stone-900/10 w-full max-w-xl p-8 md:p-12 shadow-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 text-muted hover:text-ink transition-colors font-sans text-sm tracking-widest uppercase"
+          className="absolute top-6 right-6 text-stone-500 hover:text-stone-900 transition-colors font-sans text-sm tracking-widest uppercase"
         >
           [ Close ]
         </button>
 
         {submitted ? (
           <div className="text-center py-12 flex flex-col items-center gap-6">
-            <span className="w-3 h-3 bg-gold rotate-45" />
-            <h3 className="display text-3xl text-ink">Commission Request Received</h3>
-            <p className="text-muted text-sm font-sans max-w-md">
+            <span className="w-3 h-3 bg-amber-700 rotate-45" />
+            <h3 className="display text-3xl text-stone-900">Commission Request Received</h3>
+            <p className="text-stone-500 text-sm font-sans max-w-md">
               Thank you, {formData.name}. Our concierge will contact you at {formData.email} within 24 hours to schedule your private consultation at Place Vendôme.
             </p>
-            <button
+            <Button
+              variant="outline"
               onClick={() => {
                 setSubmitted(false);
                 onClose();
               }}
-              className="mt-4 border border-line px-8 py-3 text-xs tracking-[0.3em] uppercase font-sans text-ink hover:bg-black hover:text-ivory transition-colors"
+              className="mt-4"
             >
               Return to Salon
-            </button>
+            </Button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             <div>
-              <span className="eyebrow text-gold">Private Appointment</span>
-              <h3 className="display text-3xl text-ink mt-2">
+              <span className="eyebrow text-amber-700">Private Appointment</span>
+              <h3 className="display text-3xl text-stone-900 mt-2">
                 {initialLook ? `Enquire — ${initialLook}` : 'Request Commission'}
               </h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-muted font-sans">
+                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
                   Full Name
                 </label>
                 <input
@@ -66,12 +68,12 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Comtesse de Grasse"
-                  className="border border-line bg-transparent p-3 text-xs text-ink focus:border-gold focus:outline-none font-sans"
+                  className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans"
                 />
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-muted font-sans">
+                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
                   Email Address
                 </label>
                 <input
@@ -80,20 +82,20 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="patron@domain.com"
-                  className="border border-line bg-transparent p-3 text-xs text-ink focus:border-gold focus:outline-none font-sans"
+                  className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-muted font-sans">
+                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
                   Preferred Salon City
                 </label>
                 <select
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="border border-line bg-ivory p-3 text-xs text-ink focus:border-gold focus:outline-none font-sans"
+                  className="border border-stone-900/10 bg-stone-50 p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans"
                 >
                   <option value="Paris">Paris (Place Vendôme)</option>
                   <option value="London">London (Mayfair)</option>
@@ -102,13 +104,13 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-muted font-sans">
+                <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
                   Subject / Look
                 </label>
                 <select
                   value={formData.look}
                   onChange={(e) => setFormData({ ...formData, look: e.target.value })}
-                  className="border border-line bg-ivory p-3 text-xs text-ink focus:border-gold focus:outline-none font-sans"
+                  className="border border-stone-900/10 bg-stone-50 p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans"
                 >
                   <option value="Aria — Monolith Coat">Look 01 — Aria (Monolith Coat)</option>
                   <option value="Luna — Ethereal Silk Gown">Look 02 — Luna (Ethereal Silk Gown)</option>
@@ -119,7 +121,7 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="text-[0.62rem] uppercase tracking-[0.25em] text-muted font-sans">
+              <label className="text-[0.62rem] uppercase tracking-[0.25em] text-stone-500 font-sans">
                 Notes & Occasion (Optional)
               </label>
               <textarea
@@ -127,16 +129,13 @@ export default function EnquiryModal({ isOpen, onClose, initialLook = '' }) {
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="Share details regarding posture, special dates, or specific styling preferences..."
-                className="border border-line bg-transparent p-3 text-xs text-ink focus:border-gold focus:outline-none font-sans resize-none"
+                className="border border-stone-900/10 bg-transparent p-3 text-xs text-stone-900 focus:border-amber-700 focus:outline-none font-sans resize-none"
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-black text-ivory py-4 text-[0.68rem] tracking-[0.3em] uppercase font-sans hover:bg-gold transition-colors mt-2"
-            >
+            <Button type="submit" variant="dark" className="w-full justify-center">
               Submit Commission Inquiry
-            </button>
+            </Button>
           </form>
         )}
       </div>

@@ -21,7 +21,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-ivory text-ink font-sans selection:bg-gold selection:text-ivory relative">
+    <div className="min-h-screen bg-stone-50 text-stone-900 font-sans selection:bg-amber-700 selection:text-stone-50 relative">
       <GrainOverlay />
       <AnnouncementBar />
       <Header onOpenEnquiry={() => handleOpenEnquiry()} />

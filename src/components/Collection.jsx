@@ -1,5 +1,6 @@
 import React from 'react';
 import { useReveal } from '../hooks/useReveal';
+import Button from './Button';
 
 export default function Collection({ onOpenEnquiry }) {
   const items = [
@@ -53,9 +54,9 @@ export default function Collection({ onOpenEnquiry }) {
       <div className="section-head">
         <div>
           <span className="eyebrow eyebrow--marked">The Runway Archive</span>
-          <h2 className="display section-title text-ink">
+          <h2 className="display section-title text-stone-900">
             Current
-            <span className="block italic text-gold font-light pl-[0.1em]">
+            <span className="block italic text-amber-700 font-light pl-[0.1em]">
               Collection
             </span>
           </h2>
@@ -90,13 +91,13 @@ function CollectionSpread({ item, isEven, onOpenEnquiry }) {
     >
       {/* Image Plate */}
       <div className={`lg:col-span-6 ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
-        <div className="relative group overflow-hidden bg-bone aspect-[4/5]">
+        <div className="relative group overflow-hidden bg-stone-200 aspect-[4/5]">
           <img
             src={item.image}
             alt={`${item.model} - ${item.title}`}
             className="w-full h-full object-cover filter grayscale-[0.16] transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-[1.015]"
           />
-          <div className="absolute top-4 right-4 bg-ivory/90 backdrop-blur-sm px-3 py-1 text-[0.6rem] tracking-[0.3em] font-sans text-ink border border-line">
+          <div className="absolute top-4 right-4 bg-stone-50/90 backdrop-blur-sm px-3 py-1 text-[0.6rem] tracking-[0.3em] font-sans text-stone-900 border border-stone-900/10">
             LOOK {item.num} — {item.model}
           </div>
         </div>
@@ -105,47 +106,43 @@ function CollectionSpread({ item, isEven, onOpenEnquiry }) {
       {/* Content Details */}
       <div className={`lg:col-span-6 flex flex-col justify-center relative ${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
         {/* Oversized Italic Gold Index Numeral */}
-        <span className="font-serif italic text-[7rem] lg:text-[10rem] font-light text-gold opacity-[0.28] absolute -top-16 -left-6 lg:-top-24 lg:-left-12 pointer-events-none select-none leading-none">
+        <span className="font-serif italic text-[7rem] lg:text-[10rem] font-light text-amber-700 opacity-[0.28] absolute -top-16 -left-6 lg:-top-24 lg:-left-12 pointer-events-none select-none leading-none">
           {item.num}
         </span>
 
         <div className="relative z-10 flex flex-col items-start gap-6">
-          <span className="eyebrow text-gold font-medium tracking-[0.3em]">
+          <span className="eyebrow text-amber-700 font-medium tracking-[0.3em]">
             {item.category}
           </span>
 
-          <h3 className="display text-3xl lg:text-5xl text-ink">
+          <h3 className="display text-3xl lg:text-5xl text-stone-900">
             {item.title}
           </h3>
 
-          <p className="text-muted leading-relaxed font-sans font-light text-base lg:text-lg max-w-xl">
+          <p className="text-stone-500 leading-relaxed font-sans font-light text-base lg:text-lg max-w-xl">
             {item.desc}
           </p>
 
           {/* Spec Table */}
-          <div className="w-full border-t border-line mt-2">
+          <div className="w-full border-t border-stone-900/10 mt-2">
             {item.specs.map((spec, sIdx) => (
               <div
                 key={sIdx}
-                className="grid grid-cols-[130px_1fr] py-3.5 border-b border-line-soft text-xs font-sans items-center"
+                className="grid grid-cols-[130px_1fr] py-3.5 border-b border-stone-900/5 text-xs font-sans items-center"
               >
-                <span className="text-muted tracking-wider uppercase font-medium">
+                <span className="text-stone-500 tracking-wider uppercase font-medium">
                   {spec.label}
                 </span>
-                <span className="text-ink font-light">{spec.value}</span>
+                <span className="text-stone-900 font-light">{spec.value}</span>
               </div>
             ))}
           </div>
 
           {/* Enquire Link */}
           <div className="pt-4">
-            <button
-              onClick={() => onOpenEnquiry(item.title)}
-              className="group inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase font-sans text-ink hover:text-gold transition-colors"
-            >
-              <span className="w-6 h-[1px] bg-current transition-all duration-300 group-hover:w-10" />
-              <span>Enquire For Look {item.num}</span>
-            </button>
+            <Button variant="link" onClick={() => onOpenEnquiry(item.title)}>
+              Enquire For Look {item.num}
+            </Button>
           </div>
         </div>
       </div>
