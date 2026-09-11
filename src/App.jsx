@@ -1,18 +1,18 @@
 import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import AnnouncementBar from "./components/AnnouncementBar";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Marquee from "./components/Marquee";
-import Collection from "./components/Collection";
-import Philosophy from "./components/Philosophy";
-import Atelier from "./components/Atelier";
-import Commission from "./components/Commission";
 import Footer from "./components/Footer";
 import EnquiryModal from "./components/EnquiryModal";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import { useScrollToHash } from "./hooks/useScrollToHash";
 
 export default function App() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
   const [selectedLook, setSelectedLook] = useState("");
+
+  useScrollToHash();
 
   const handleOpenEnquiry = (lookTitle = "") => {
     setSelectedLook(typeof lookTitle === "string" ? lookTitle : "");
@@ -24,12 +24,11 @@ export default function App() {
       <AnnouncementBar />
       <Header onOpenEnquiry={() => handleOpenEnquiry()} />
       <main>
-        <Hero onOpenEnquiry={() => handleOpenEnquiry()} />
-        <Marquee />
-        <Collection onOpenEnquiry={handleOpenEnquiry} />
-        <Philosophy />
-        <Atelier />
-        <Commission onOpenEnquiry={() => handleOpenEnquiry()} />
+        <Routes>
+          <Route path="/" element={<Home onOpenEnquiry={handleOpenEnquiry} />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
       <Footer />
       {/*

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 
 export default function Header({ onOpenEnquiry }) {
@@ -47,9 +48,9 @@ export default function Header({ onOpenEnquiry }) {
 
           {/* Center Wordmark */}
           <div className="text-center flex flex-col items-center">
-            <a href="#" className="text-2xl md:text-3xl font-black text-stone-900">
+            <Link to="/" className="text-2xl md:text-3xl font-black text-stone-900">
               Atelier
-            </a>
+            </Link>
             <span className="uppercase text-stone-800 text-xs tracking-widest">
               Haute Couture
             </span>
@@ -59,7 +60,7 @@ export default function Header({ onOpenEnquiry }) {
           <div className="flex items-center justify-end gap-8">
             <nav className="hidden lg:flex items-center gap-10" aria-label="Secondary Navigation">
               <a href="#commission" className={navItemClass}>Commission</a>
-              <a href="#commission" className={navItemClass}>Contact</a>
+              <Link to="/contact" className={navItemClass}>Contact</Link>
             </nav>
             <div className="hidden sm:block">
               <Button href="#commission" className="">
@@ -104,6 +105,13 @@ export default function Header({ onOpenEnquiry }) {
           >
             Commission
           </a>
+          <Link
+            to="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className=" text-2xl text-stone-900 hover:text-amber-700 transition-colors"
+          >
+            Contact
+          </Link>
           <div className="pt-4 border-t border-stone-900/10 flex flex-col gap-3">
             <span className="eyebrow">Private Salons</span>
             <p className="text-sm text-stone-500">Paris · Place Vendôme<br />By appointment only.</p>

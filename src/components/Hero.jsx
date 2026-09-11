@@ -18,7 +18,7 @@ export default function Hero({ onOpenEnquiry }) {
             </span>
           </h1>
 
-          <p className="lede mb-10">
+          <p className="text-stone-500 leading-relaxed font-light text-base lg:text-lg max-w-3xl mt-6 mb-10">
             A quiet dialogue between architectural structure and fluid drapery.
             Each silhouette is conceived, patterned, and executed entirely by
             hand in our Paris atelier.
