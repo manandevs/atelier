@@ -1,90 +1,74 @@
-import React from 'react';
+import * as React from "react";
+import { cva } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
-export default function Button({
-  children,
-  variant = 'primary', // 'primary' | 'secondary' | 'outline' | 'link' | 'dark'
-  href,
-  onClick,
-  className = '',
-  showArrow = false,
-  type = 'button',
-  ...props
-}) {
-  const baseStyles = "group relative inline-flex items-center justify-between px-8 py-4 text-[0.64rem] tracking-[0.3em] uppercase font-sans transition-all duration-500 overflow-hidden";
-  
-  let variantStyles = "";
-  let arrowColorStyles = "";
+const buttonVariants = cva(
+  "inline-flex items-center justify-between whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-stone-900 text-stone-50 border border-stone-900 hover:bg-stone-800",
+        secondary:
+          "border border-amber-700/40 text-amber-700 hover:border-amber-700 hover:bg-amber-700/5",
+        destructive:
+          "bg-gradient-to-br from-red-600 to-red-800 text-stone-50 hover:opacity-90 border border-red-700",
+        dark: "border border-stone-50/30 text-stone-50 hover:text-stone-950 hover:bg-stone-50",
+        outline: "border border-stone-300 bg-transparent text-stone-900 hover:bg-stone-100",
+        link: "text-stone-900 underline-offset-4 hover:underline bg-transparent justify-start p-0 h-auto",
+      },
+      size: {
+        default: "h-auto px-8 py-4 text-[0.64rem] tracking-[0.3em] uppercase",
+        sm: "h-9 rounded-md px-3 text-xs",
+        xs: "h-6 rounded-md px-2 text-xs",
+        lg: "h-11 rounded-md px-8 text-sm",
+        icon: "h-10 w-10 aspect-square",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+);
 
-  switch (variant) {
-    case 'primary':
-      variantStyles = "border border-stone-900 text-stone-900 hover:border-amber-700";
-      arrowColorStyles = "bg-stone-900 group-hover:bg-stone-50 border-stone-900 group-hover:border-stone-50";
-      break;
-    case 'secondary':
-      variantStyles = "border border-amber-700/40 text-amber-700 hover:border-amber-700";
-      arrowColorStyles = "bg-amber-700 group-hover:bg-stone-50 border-amber-700 group-hover:border-stone-50";
-      break;
-    case 'dark':
-      variantStyles = "border border-stone-50/30 text-stone-50 hover:text-stone-950";
-      arrowColorStyles = "bg-stone-50 text-stone-950";
-      break;
-    case 'outline':
-      variantStyles = "border border-stone-900/20 text-stone-900 hover:border-stone-900";
-      arrowColorStyles = "bg-stone-900 group-hover:bg-stone-50 border-stone-900 group-hover:border-stone-50";
-      break;
-    case 'link':
+const Button = React.forwardRef(
+  ({ className, variant, size, href, showArrow, children, ...props }, ref) => {
+    const content = (
+      <>
+        <span className="relative z-10">{children}</span>
+        {showArrow && (
+          <span className="relative z-10 ml-6 flex items-center">
+            <span className="w-4 h-[1px] bg-current group-hover:w-8 transition-all duration-300" />
+            <span className="w-[6px] h-[6px] border-t border-r border-current rotate-45 -ml-[3px]" />
+          </span>
+        )}
+      </>
+    );
+
+    if (href) {
       return (
-        <button
-          type={type}
-          onClick={onClick}
-          className={`group inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase font-sans text-stone-900 hover:text-amber-700 transition-colors ${className}`}
+        <a
+          href={href}
+          className={cn(buttonVariants({ variant, size, className }), "group")}
           {...props}
         >
-          <span className="w-6 h-[1px] bg-current transition-all duration-300 group-hover:w-10" />
-          <span>{children}</span>
-        </button>
+          {content}
+        </a>
       );
-    default:
-      variantStyles = "border border-stone-900 text-stone-900";
-      arrowColorStyles = "bg-stone-900 group-hover:bg-stone-50";
-  }
-
-  const content = (
-    <>
-      <span 
-        className={`absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out ${
-          variant === 'secondary' ? 'bg-amber-700' : variant === 'dark' ? 'bg-stone-50' : 'bg-stone-900'
-        }`} 
-      />
-      <span className={`relative z-10 transition-colors duration-500 ${
-        variant === 'dark' ? 'group-hover:text-stone-950' : 'group-hover:text-stone-50'
-      }`}>
-        {children}
-      </span>
-      {showArrow && (
-        <span className="relative z-10 ml-6 flex items-center transition-colors duration-500">
-          <span className={`w-4 h-[1px] transition-all duration-300 ${
-            variant === 'dark' ? 'bg-stone-50 group-hover:bg-stone-950 group-hover:w-8' : 'bg-stone-900 group-hover:bg-stone-50 group-hover:w-8'
-          }`} />
-          <span className={`w-[6px] h-[6px] border-t border-r rotate-45 -ml-[3px] transition-colors duration-500 ${
-            variant === 'dark' ? 'border-stone-50 group-hover:border-stone-950' : 'border-stone-900 group-hover:border-stone-50'
-          }`} />
-        </span>
-      )}
-    </>
-  );
-
-  if (href) {
+    }
     return (
-      <a href={href} className={`${baseStyles} ${variantStyles} ${className}`} {...props}>
+      <button
+        ref={ref}
+        className={cn(buttonVariants({ variant, size, className }), "group")}
+        {...props}
+      >
         {content}
-      </a>
+      </button>
     );
-  }
+  },
+);
+Button.displayName = "Button";
 
-  return (
-    <button type={type} onClick={onClick} className={`${baseStyles} ${variantStyles} ${className}`} {...props}>
-      {content}
-    </button>
-  );
-}
+export { Button, buttonVariants };
+export default Button;
